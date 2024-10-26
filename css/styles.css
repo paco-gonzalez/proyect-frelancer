@@ -1,0 +1,186 @@
+:root{
+    --blanco: #ffffff;
+    --oscuro: #212121;
+    --primario:  #ffc107;
+    --secundario: #0097A7;
+    --gris: #757575;
+    --griesClaro: #dfe9f3;
+
+    /*--fuente-principal: 3.8rem;*/
+}
+
+/*GLOBALES*/
+/*SON GLOBALS Y SE PUEDEN USAR EN TODO EL HTML*/
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;/*HACK PARA EL BOX MODEL*/
+}
+
+/*la coma es para que esten los selectores en una sola linea y no serepita*/
+*, *:before, *:after { /*este es universal y afecta a todo el HTML y se lo pone a todos*/
+    box-sizing: inherit; /*este box-sizin es para medir los pixeles y no sera sin poblema*/
+}
+
+/** { /*selecciona todos los elementos del HTML es universal */
+body{
+    font-size: 16px; /*1rem = 10px*/
+    font-family: "Krub", sans-serif;/*si colocas esta parte de codigo el texto cambiara en toda la pagina*/
+    background-image: linear-gradient(to top, var(--griesClaro) 0%, var(--blanco) 100%);/*esta parte es para el fondo de la pagina y degradado*/
+}
+
+/*se creara el diseño del boton*/
+.boton{
+    background-color: var(--secundario);
+    color: var(--blanco);
+    padding: 1rem 4rem;
+    margin-top: 2rem;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: .5rem;
+    width: 90%;
+    text-align: center;
+}
+
+/*query para que el boton se ajuste automatico*/
+@media (min-width: 768px ) {
+    .boton{
+        width: auto;
+    }
+}
+
+.sombra{/*esta parte es para el sombreado de la parte del contenido*/
+    -webkit-box-shadow: 0px 0px 29px -1px rgba(112,112,112,0.98);
+    -moz-box-shadow: 0px 0px 29px -1px rgba(112,112,112,0.98);
+    box-shadow: 0px 0px 29px -1px rgba(112,112,112,0.98);
+    background-color: var(--blanco);/*se le pone el fondo blanco*/
+    padding: 2rem;
+    border-radius: 2rem;
+}
+
+/*TIPOGRAFIA*/
+/*LA TIPOGRAFIA LA CUAL ES GLOBAL SI SE PUEDE USAR EN TODO EL HTML*/
+h1{
+    font-size: 3.8rem; /*Rem es igual a 10 pixeles 1rem= 10px*/
+}
+
+h2{
+    font-size: 2.8rem; /*Rem es igual a 10 pixeles 1rem= 10px*/
+}
+
+h3{
+    font-size: 1.8rem; /*Rem es igual a 10 pixeles 1rem= 10px*/
+}
+
+h1,h2,h3{
+    text-align: center;
+}
+
+/*TITULOS*/
+.titulo span {
+    font-size: 2.9rem;
+}
+
+/*TITULOS*/
+/* toda esta parte es para el menudo la pagina */
+.contenedor{
+    max-width: 120rem;
+    /*
+    margin-top: 0;
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-left: auto;*/
+ /*esto es lo mimo que lo de abjo pero con menos lineas de codigo*/
+    margin: 0 auto;
+}
+
+/*NAVEGACION PRINCIPAL*/
+/*menu*/
+.nav-bg{
+    background-color: var(--secundario);
+}
+
+/*menu*/
+.navegacion-prinipal{
+    display: flex;
+    flex-direction: column;
+}
+ 
+/*es para el menu se vea en todas la resoluciones*/
+@media (min-width: 768px) {
+    .navegacion-prinipal{
+        flex-direction: row;
+        justify-content: space-between;/*per mitir mover el contenido horizontal o verticalmente*/
+    }
+    
+}
+/*es el contenido del menu*/
+.navegacion-prinipal a{
+    display: block;/*centrar el contenido del menu*/
+    text-align: center;/*centrar el contenido del menu*/
+    color: var(--blanco); 
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 700;
+    padding-top: 0.5rem;
+
+}
+
+/*es para cuando arrastes el maouse se ponga de color*/
+.navegacion-prinipal a:hover{
+    background-color: var(--primario);
+    color: var(--oscuro);
+}
+
+/*parte de la parte de responsive para ajustar la pantalla*/
+@media (min-whidth: 480px) {
+    h1{
+        background: none;
+    }
+}
+
+/*HERO*/
+/*en esta parte se le agrega la imagen de al fondo*/
+.hero{
+    background-image: url(../IMG/hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 450px;
+    position: relative;
+    margin-bottom: 2rem;/*se parar el contenido del hero*/
+    
+}
+
+/*para el sombrado de la imagen*/
+.contenedor-hero{
+    position: absolute;
+    background-color: rgba(0,0,0, .5 );/* ANTERIOR*/
+    background-color: rgb(0 0 0 /50% );/*es la nueva y mas eficiente*/
+    width: 100%;
+    height: 100%;
+
+    /*esta parte es lo de la descripcion y la imagen del mapa como del municipio*/
+    /*este codigo se puede utilizar en todo momento y en diferente proyecto*/
+    display: flex; /*se alinia horizontalmente*/
+    flex-direction: column;
+    align-items: center; /*se alinia centralmente*/
+    justify-content: center;/*queda en el centro por completo*/
+}
+
+/*poner el tecto en color blanco */
+.contenedor-hero h2, .contenedor-hero p{
+    color: var(--blanco);
+}
+
+/*es para aliniar la ubicacion del establecimiento*/
+.ubicacion{
+    display: flex;
+    align-items: flex-end;
+}
+
+/*servicios*/
+.servicios{
+    display: grid;
+    
+}
