@@ -79,14 +79,14 @@
 
       <div class="Servicios">
         
-        <section>
+        <section class="servicio">
           <h3>Diseño Web</h3>
+          <div class="iconos">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="icon icon-tabler icon-tabler-palette" width="40" height="40" viewBox="0 0 24 24"
             stroke-width="1.5" stroke="#000000"fill="none"stroke-linecap="round"  stroke-linejoin="round"
           >
-
             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
             <path
               d="M12 21a9 9 0 0 1 0 -18c4.97 0 9 3.582 9 8c0 1.06 -.474 2.078 -1.318 2.828c-.844 .75 -1.989 1.172 -3.182 1.172h-2.5a2 2 0 0 0 -1 3.75a1.3 1.3 0 0 1 -1 2.25"
@@ -95,6 +95,7 @@
             <path d="M12.5 7.5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
             <path d="M16.5 10.5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
           </svg>
+        </div>
           <p>
             Quisque quis faucibus augue, eget luctus purus. In dictum quam vel
             dolor porttitor euismod. Duis eleifend enim id vulputate faucibus.
@@ -104,8 +105,9 @@
           </p>
         </section>
 
-        <section>
+        <section class="servicio">
           <h3>Aplicaciones Mobiles</h3>
+          <div class="iconos">
           <svg
             xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-android" width="40" height="40"
             viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round"
@@ -132,6 +134,7 @@
             />
             <path d="M12 4a2 2 0 0 0 2 -2a2 2 0 0 0 -2 2" />
           </svg>
+        </div>
           <p>
             Quisque quis faucibus augue, eget luctus purus. In dictum quam vel
             dolor porttitor euismod. Duis eleifend enim id vulputate faucibus.
@@ -141,8 +144,9 @@
           </p>
         </section>
 
-        <section>
+        <section class="servicio">
           <h3>Aplicaciones Web</h3>
+          <div class="iconos">
           <svg
             xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-device-desktop-code"  width="40"  height="40" viewBox="0 0 24 24"
             stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round"
@@ -156,6 +160,7 @@
             <path d="M20 21l2 -2l-2 -2" />
             <path d="M17 17l-2 2l2 2" />
           </svg>
+        </div>
           <p>
             Quisque quis faucibus augue, eget luctus purus. In dictum quam vel
             dolor porttitor euismod. Duis eleifend enim id vulputate faucibus.
@@ -165,45 +170,49 @@
           </p>
         </section>
       </div><!--cierre de la clase de servicios-->
-    </main>
+    
 
     <!--la tabla de contenido en el cual se llena los campo -->
     <section>
       <h2>contacto</h2>
 
-      <form>
+      <form class="formulario">
         <fieldset>
-          <legend>CONTACTÁNOS LLENANDO TODOS LOS CAMPOS</legend>
 
-          <div>
+          <legend>CONTACTÁNOS LLENANDO LOS CAMPOS</legend>
+
+        <div class="formulario-campos">
+          <div class="campos">
             <label>Nombre</label>
-            <input type="text" placeholder="Nombre completo" />
+            <input class="input-text" type="text" placeholder="Nombre completo" />
           </div>
 
-          <div>
+          <div class="campos">
             <label>Telefono</label>
-            <input type="tel" placeholder="Telefono o celular" />
+            <input class="input-text" type="tel" placeholder="Telefono o celular" />
           </div>
 
-          <div>
+          <div class="campos">
             <label>Correo</label>
-            <input type="email" placeholder="Correo electronico" />
+            <input class="input-text" type="email" placeholder="Correo electronico" />
           </div>
 
-          <div>
+          <div class="campos">
             <label>Mensaje</label>
-            <textarea></textarea>
+            <textarea class="input-text"></textarea>
           </div>
+        </div> <!--cierre de formulario-campos-->
 
-          <div>
-            <input type="submit" value="Enviar" />
+          <div class="alinear-derecha flex">
+            <input class="boton w-sm-100" type="submit" value="Enviar" />
           </div>
         </fieldset>
       </form>
     </section>
+  </main>
 
-    <footer>
-      <p>todos los derechos reservados paco</p>
+    <footer class="footer">
+      <p>todos los derechos reservados</p>
     </footer>
   </body>
 </html>

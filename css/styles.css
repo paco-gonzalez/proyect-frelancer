@@ -14,6 +14,13 @@
 html {
     font-size: 62.5%;
     box-sizing: border-box;/*HACK PARA EL BOX MODEL*/
+    scroll-snap-type: y mandatory;
+}
+
+/**Scroll Snap es para que cuando scrolles tega un efecto y pueda mantenese en servicios**/
+.servicio, .navegacion-prinipal, .formulario{
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
 }
 
 /*la coma es para que esten los selectores en una sola linea y no serepita*/
@@ -41,6 +48,7 @@ body{
     border-radius: .5rem;
     width: 90%;
     text-align: center;
+    border: none;
 }
 
 /*query para que el boton se ajuste automatico*/
@@ -48,6 +56,11 @@ body{
     .boton{
         width: auto;
     }
+}
+
+/*es para cuando estes sobre el boton se cambie el puntador*/
+.boton:hover{
+    cursor: pointer;
 }
 
 .sombra{/*esta parte es para el sombreado de la parte del contenido*/
@@ -95,6 +108,29 @@ h1,h2,h3{
     margin: 0 auto;
 }
 
+/*utilidades*/
+.w-sm-100{
+    width: 100%;
+}
+
+@media (min-width: 768px ) {
+    /*es para que el botn de enciar tome el ancho de la pantalla completo*/
+    .w-sm-100{
+        width: auto;
+    }
+
+    /*esta propiedad es para que el boton de enciar se alinee a la derecha*/
+    .flex{
+        display: flex;
+    }
+
+    /*esta propiedad es para que el boton de enciar se alinee a la derecha*/
+    .alinear-derecha{
+        justify-content: flex-end;
+    }
+}
+
+
 /*NAVEGACION PRINCIPAL*/
 /*menu*/
 .nav-bg{
@@ -140,7 +176,7 @@ h1,h2,h3{
     }
 }
 
-/*HERO*/
+/**HERO**/
 /*en esta parte se le agrega la imagen de al fondo*/
 .hero{
     background-image: url(../IMG/hero.jpg);
@@ -179,8 +215,124 @@ h1,h2,h3{
     align-items: flex-end;
 }
 
-/*servicios*/
-.servicios{
-    display: grid;
+
+/**Servicios**/
+/*esta parte es para que se puedan alinear los elementos con el grid dentro de mis servicios y usando el media querypara ser serposive*/
+@media (min-width: 768px) {
+    .Servicios{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);/*fr es fraccion de la pantalla es mas sencillo que poner el porcentaje*/
+        /*esta es la version corta de grid hasta cuando este famialrizado se pueda usar*/
+        /*grid: 200px 800px / 300px 300px 300px;*/
+        column-gap: 1rem;/*se paracio del contenido*/
+    }   
+}
+
+/*alineamos la parte del objeto circular para verse centrado*/
+.servicio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*esta parte es la parte de los titulos de cada servicio*/
+.servicio h3{
+    color: var(--secundario);
+    font-weight: normal;
+}
+
+/*alinaer el texto de la descripcion*/
+.servicio p{
+    line-height: 2rem;
+    text-align: center;
+}
+    
+/*en esta parte es para alinear los iconos en la parte de servicios*/
+.servicio .iconos{
+    height: 15rem;
+    width: 15rem;
+    background-color: var(--primario);
+    border-radius: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;/*se alinia verticalmente*/
+}
+
+/*CONTACTO*/
+
+/*el diseño del formulario*/
+.formulario{
+    background-color: var(--gris);
+    width: min(60rem, 100%);/*el mi utiliza el valor mas pequeño de la pantalla*/
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 2rem;
+
+}
+
+/*los bosdes de la formulario*/
+.formulario fieldset{
+    border: none;
+}
+
+/*el titulo del formulario*/
+.formulario legend{
+    text-align: left;
+    margin: 0 auto; /*se centra el texto en firefox*/
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--primario);
+}
+
+@media (min-width: 768px) {
+    .formulario-campos{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto 20rem;
+        column-gap: 1rem;
+    }
+
+    /*en esta parte es para que el de correos tenga la mas campo*/
+    /**por eso se usa esta linia si tengo muchos clasees de campo se usa el nth-child para escoger solo 1 clase**/
+    .campos:nth-child(3), .campos:nth-child(4){
+        grid-column: 1/3;
+        grid-column: 1/3;
+    }
     
 }
+
+.campos{
+    margin-bottom: 1rem;
+
+
+}
+
+/*estilo del texto de los campos como el nombre y el teléfono etc*/
+.campos label{
+    color: var(--blanco);
+    font-weight: bold;
+    margin-bottom: .5rem;
+    display: block;
+}
+
+/*es para que se vea mas grande el area de texto*/
+.campos textarea{
+    height: 15rem;
+
+}
+
+/*estilo del input de los campos en el cual se escrbe el usuario*/
+.input-text{
+    width: 100%;
+    border: none;
+    padding: 1.5rem;
+    border-radius: .5rem;
+}
+
+/*  FOOTER */
+.footer{
+    text-align: center;
+}
+
